@@ -10,6 +10,35 @@
 			@media screen and (max-width: 1680px) { html { font-size: 11pt; } }
 			@media screen and (max-width: 1280px) { html { font-size: 10pt; } }
 			@media screen and (max-width: 736px)  { html { font-size: 10pt; } }
+
+			/* Стили для кнопки копирования email */
+			.copy-email {
+				color: #f56a6a;
+				cursor: pointer;
+				text-decoration: underline;
+			}
+			.copy-email:hover {
+				text-decoration: none;
+			}
+			.copy-toast {
+				position: fixed;
+				bottom: 30px;
+				left: 50%;
+				transform: translateX(-50%) translateY(20px);
+				background: #2e3450;
+				color: #fff;
+				padding: 12px 24px;
+				border-radius: 8px;
+				font-size: 0.95rem;
+				opacity: 0;
+				pointer-events: none;
+				transition: all 0.3s ease;
+				z-index: 9999;
+			}
+			.copy-toast.show {
+				opacity: 1;
+				transform: translateX(-50%) translateY(0);
+			}
 		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -114,8 +143,7 @@
 								<!-- Contact Box -->
 									<h2>Связаться</h2>
 									<div class="box">
-										<!-- ИЗМЕНЕНИЕ 1: Обновлен email в тексте и ссылке -->
-										<p>Если хотите предложить сотрудничество, стать тестером или просто написать о проекте — напишите на почту <a href="mailto:contact@sukharevivan.ru">contact@sukharevivan.ru</a>. Я стараюсь отвечать в течение пары дней.</p>
+										<p>Если хотите предложить сотрудничество, стать тестером или просто написать о проекте — напишите на почту <span class="copy-email" data-email="contact@sukharevivan.ru">contact@sukharevivan.ru</span> (клик — чтобы скопировать). Я стараюсь отвечать в течение пары дней.</p>
 									</div>
 							</section>
 
@@ -134,8 +162,7 @@
 							</section>
 							<section>
 								<h3>Email</h3>
-								<!-- ИЗМЕНЕНИЕ 2: Обновлен email в футере -->
-								<p><a href="mailto:contact@sukharevivan.ru">contact@sukharevivan.ru</a></p>
+								<p><span class="copy-email" data-email="contact@sukharevivan.ru">contact@sukharevivan.ru</span></p>
 							</section>
 						</section>
 					</footer>
@@ -156,6 +183,61 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Скрипт копирования email в буфер обмена -->
+			<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Создаём всплывающую подсказку
+				var toast = document.createElement('div');
+				toast.className = 'copy-toast';
+				toast.textContent = 'Email скопирован!';
+				document.body.appendChild(toast);
+
+				// Находим все элементы с классом copy-email
+				document.querySelectorAll('.copy-email').forEach(function(el) {
+					el.addEventListener('click', function() {
+						var email = this.getAttribute('data-email');
+						var toastEl = toast;
+
+						// Современный метод копирования
+						if (navigator.clipboard && window.isSecureContext) {
+							navigator.clipboard.writeText(email).then(function() {
+								toastEl.classList.add('show');
+								setTimeout(function() {
+									toastEl.classList.remove('show');
+								}, 1800);
+							}).catch(function(err) {
+								console.error('Ошибка копирования: ', err);
+								fallbackCopy(email, toastEl);
+							});
+						} else {
+							// Fallback для старых браузеров
+							fallbackCopy(email, toastEl);
+						}
+					});
+				});
+
+				// Резервный метод копирования
+				function fallbackCopy(text, toastEl) {
+					var textArea = document.createElement('textarea');
+					textArea.value = text;
+					textArea.style.position = 'fixed';
+					textArea.style.opacity = '0';
+					document.body.appendChild(textArea);
+					textArea.select();
+					try {
+						document.execCommand('copy');
+						toastEl.classList.add('show');
+						setTimeout(function() {
+							toastEl.classList.remove('show');
+						}, 1800);
+					} catch (err) {
+						console.error('Не удалось скопировать: ', err);
+					}
+					document.body.removeChild(textArea);
+				}
+			});
+			</script>
 
 	</body>
 </html>
