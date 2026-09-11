@@ -7,7 +7,7 @@
 - YouTube: https://www.youtube.com/@SukharevGames
 - VK: https://vk.ru/sukharevgames
 - GitHub: https://github.com/IvanSukharev
-- Email: ivansukharevgames@gmail.com
+- Email: contact@sukharevivan.ru
 
 ## Лицензия
 
