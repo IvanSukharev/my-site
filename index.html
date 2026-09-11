@@ -4,6 +4,14 @@
 		<title>The Project Solus</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+		<link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+		<link rel="manifest" href="assets/favicon/site.webmanifest">
+		
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
 			html { font-size: 12pt; }
@@ -75,6 +83,21 @@
 					float: none;
 					margin: 0 0 1em 0;
 				}
+			}
+			body::before {
+				content: "";
+				position: fixed;   /* вот здесь — фиксируем слой, а не свойство background */
+				inset: 0;          /* top/right/bottom/left: 0 */
+				background: url("images/bg.jpg") center center / cover no-repeat;
+				z-index: -1;       /* уводим за контент */
+				pointer-events: none;
+			}
+
+			/* Чтобы контент был выше фона */
+			#wrapper {
+				position: relative;
+				z-index: 0;
+				background: transparent; /* если фон раньше висел здесь — убираем */
 			}
 		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
