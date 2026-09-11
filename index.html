@@ -39,6 +39,43 @@
 				opacity: 1;
 				transform: translateX(-50%) translateY(0);
 			}
+		/* Видео-«гифки» в блоке механик */
+			.image video {
+				width: 100%;
+				height: auto;
+				display: block;
+				border-radius: 0.375em;
+			}
+			/* Абзацы с видео: каждый абзац содержит свой float,
+			поэтому следующий элемент начинается ниже видео */
+			.post p {
+				display: flow-root;
+				margin-bottom: 1.5em;
+			}
+
+			/* Заголовки «Видео», «Скриншоты» и т.д. всегда идут с новой строки */
+			.post h2,
+			.post h3 {
+				clear: both;
+			}
+
+			/* На всякий случай — чтобы блок «Видео» не прилипал к обтекаемому видео */
+			.post hr {
+				clear: both;
+			}
+			/* Крупнее видео в блоке механик (по умолчанию в шаблоне ~40%) */
+			.image.video-mech {
+				max-width: 55%;
+			}
+
+			/* На мобильных возвращаем полноценную ширину и убираем обтекание */
+			@media screen and (max-width: 736px) {
+				.image.video-mech {
+					max-width: 100%;
+					float: none;
+					margin: 0 0 1em 0;
+				}
+			}
 		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -76,15 +113,16 @@
 
 						<!-- Post -->
 							<section class="post">
+
 								<header class="major">
 									<h1>О проекте</h1>
 								</header>
-
 								<!-- Key Art -->
 									<span class="image main"><img src="images/pic01.jpg" alt="Ключевой арт The Project Solus" /></span>
 
 								<!-- About -->
 									<p>Миры идеализма и материализма воссоединились: любая мысль может стать реальностью, если иметь достаточную силу воли…</p>
+									<span class="image main"><img src="images/pic10.jpg" alt="Ключевой арт The Project Solus" /></span>
 									<p>Вы просыпаетесь в беспамятстве. Вы не знаете, кто вы и что вы, но одно известно точно — вы должны добраться до места или предмета, который взывает к вам с момента пробуждения: точка Суперпозиции… Истины… Где начало и конец.</p>
 									<p>На пути вам встретятся непреодолимые трудности. Казалось бы, выхода нет — но при должной силе воли всё возможно.</p>
 
@@ -95,6 +133,54 @@
 										<li><strong>Статус:</strong> активная разработка.</li>
 										<li><strong>Движок:</strong> Unity 6.</li>
 									</ul>
+
+								<h3>Механики</h3>
+
+								<p>
+									<span class="image left video-mech">
+										<video autoplay loop muted playsinline preload="metadata">
+											<source src="video/fight.mp4" type="video/mp4" />
+										</video>
+									</span>
+									Обучитесь владеть оружием, которое больше подходит вашей душе: быстрые клинки, сокрушительные молоты или рубящие топоры.
+								</p>
+
+								<p>
+									<span class="image right video-mech">
+										<video autoplay loop muted playsinline preload="metadata">
+											<source src="video/jump.mp4" type="video/mp4" />
+										</video>
+									</span>
+									 Полагайтесь на акробатические навыки: прыгайте от стен, уворачивайтесь, бегайте по стенам.
+								</p>
+
+								<p>
+									<span class="image left video-mech">
+										<video autoplay loop muted playsinline preload="metadata">
+											<source src="video/magic.mp4" type="video/mp4" />
+										</video>
+									</span>
+									Изменяйте мир своей волей: остановите время, обратите события вспять или сожгите препятствия на пути. Главное — добраться до Истины…
+								</p>
+								
+								<!-- Video -->
+									<h2>Видео</h2>
+										<div class="box alt">
+											<div class="row gtr-50 gtr-uniform">
+												<div class="col-6">
+													<!-- Превью для первого видео -->
+													<div class="video-preview" data-video-id="FlsVe-Tn-sE" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; cursor:pointer; background:#000;">
+														<img src="https://i.ytimg.com/vi/FlsVe-Tn-sE/maxresdefault.jpg" alt="Превью видео 1" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" loading="lazy" />
+													</div>
+												</div>
+												<div class="col-6">
+													<!-- Превью для второго видео -->
+													<div class="video-preview" data-video-id="GSYMDe7hubo" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; cursor:pointer; background:#000;">
+														<img src="https://i.ytimg.com/vi/GSYMDe7hubo/maxresdefault.jpg" alt="Превью видео 2" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" loading="lazy" />
+													</div>
+												</div>
+											</div>
+										</div>
 
 								<!-- Screenshots -->
 									<h2>Скриншоты</h2>
@@ -111,11 +197,6 @@
 											<div class="col-4"><span class="image fit"><img src="images/pic08.jpg" alt="Скриншот 7" loading="lazy" /></span></div>
 										</div>
 									</div>
-
-									<h3>Механики</h3>
-									<p><span class="image left"><img src="images/pic04.jpg" alt="Скриншот 8" loading="lazy" /></span>Обучитесь владеть оружием, которое больше подходит вашей душе: быстрые клинки, сокрушительные молоты или рубящие топоры. Полагайтесь на акробатические навыки: прыгайте от стен, уворачивайтесь, бегайте по стенам. Изменяйте мир своей волей: остановите время, обратите события вспять или сожгите препятствия на пути. Главное — добраться до Истины…</p>
-
-									<hr />
 
 								<!-- Devlog -->
 									<h2>Запись от разработчика</h2>
@@ -169,7 +250,10 @@
 
 				<!-- Copyright -->
 					<div id="copyright">
-						<li>&copy; 2026 Иван Сухарев · The Project Solus</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						<ul class="menu">
+							<li>&copy; 2026 Иван Сухарев · The Project Solus</li>
+							<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
 					</div>
 
 			</div>
@@ -237,6 +321,32 @@
 					document.body.removeChild(textArea);
 				}
 			});
+			</script>
+			<script>
+				// Заменяем превью на iframe только при клике пользователя
+				document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.video-preview').forEach(function(preview) {
+						preview.addEventListener('click', function() {
+							var videoId = this.getAttribute('data-video-id');
+							var iframe = document.createElement('iframe');
+							iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1');
+							iframe.setAttribute('title', 'YouTube video player');
+							iframe.setAttribute('frameborder', '0');
+							iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+							iframe.setAttribute('allowfullscreen', '');
+							iframe.style.position = 'absolute';
+							iframe.style.top = '0';
+							iframe.style.left = '0';
+							iframe.style.width = '100%';
+							iframe.style.height = '100%';
+							iframe.style.border = '0';
+
+							// Заменяем содержимое превью на iframe
+							this.innerHTML = '';
+							this.appendChild(iframe);
+						});
+					});
+				});
 			</script>
 
 	</body>
