@@ -1,211 +1,25 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>The Project Solus</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-    
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        (function() {
+            const browserLangs = navigator.languages || [navigator.language];
+            let targetLang = 'en';
+            
+            for (const lang of browserLangs) {
+                const l = lang.toLowerCase();
+                if (l.startsWith('ru') || l.startsWith('uk') || l.startsWith('be') || l.startsWith('kk')) {
+                    targetLang = 'ru';
+                    break;
+                }
+            }
+            window.location.replace(targetLang + '/index.html');
+        })();
+    </script>
 </head>
-<body class="is-preload">
-
-    <div id="wrapper" class="fade-in">
-
-        <!-- Viewmodel Layer -->
-        <img src="images/bg_hands.png" alt="Viewmodel" class="fixed-viewmodel" />
-
-        <!-- Intro Section -->
-        <div id="intro">
-            <h1>The Project Solus</h1>
-            <p>Экшен от первого лица</p>
-            <p class="author">Разработчик: Иван Сухарев</p>
-            <ul class="actions">
-                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly"></a></li>
-            </ul>
-        </div>
-
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">The Project Solus</a>
-        </header>
-
-        <!-- Navigation -->
-        <nav id="nav">
-            <ul class="icons">
-                <li><a href="https://github.com/IvanSukharev" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
-                <li><a href="https://www.youtube.com/@SukharevGames" class="icon brands fa-youtube" target="_blank" rel="noopener"><span class="label">YouTube</span></a></li>
-                <li><a href="https://vk.ru/sukharevgames" class="icon brands fa-vk" target="_blank" rel="noopener"><span class="label">VK</span></a></li>
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div id="main">
-            <section class="post">
-
-                <header class="major">
-                    <h1>О проекте</h1>
-                </header>
-
-                <!-- Video Section -->
-                <h2>Видео</h2>
-                <div class="box alt">
-                    <div class="row gtr-50 gtr-uniform">
-                        <div class="col-6">
-                            <div class="video-preview" data-video-id="FlsVe-Tn-sE" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; cursor:pointer; background:#000;">
-                                <img src="https://i.ytimg.com/vi/FlsVe-Tn-sE/maxresdefault.jpg" alt="Video Preview 1" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" loading="lazy" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="video-preview" data-video-id="GSYMDe7hubo" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; cursor:pointer; background:#000;">
-                                <img src="https://i.ytimg.com/vi/GSYMDe7hubo/maxresdefault.jpg" alt="Video Preview 2" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mechanics Section -->
-                <h3>Механики</h3>
-
-                <p>
-                    <span class="image left video-mech">
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="video/fight.mp4" type="video/mp4" />
-                        </video>
-                    </span>
-                    Обучитесь владеть оружием, которое больше подходит вашей душе: быстрые клинки, сокрушительные молоты или рубящие топоры.
-                </p>
-
-                <p>
-                    <span class="image right video-mech">
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="video/jump.mp4" type="video/mp4" />
-                        </video>
-                    </span>
-                     Полагайтесь на акробатические навыки: прыгайте от стен, уворачивайтесь, бегайте по стенам.
-                </p>
-
-                <p>
-                    <span class="image left video-mech">
-                        <video autoplay loop muted playsinline preload="metadata">
-                            <source src="video/magic.mp4" type="video/mp4" />
-                        </video>
-                    </span>
-                    Изменяйте мир своей волей: остановите время, обратите события вспять или сожгите препятствия на пути. Главное — добраться до Истины…
-                </p>
-
-                <!-- World Section -->
-                <h3>Мир</h3>
-                <span class="image main"><img src="images/pic01.jpg" alt="Key Art" /></span>
-
-                <p>Миры идеализма и материализма воссоединились: любая мысль может стать реальностью, если иметь достаточную силу воли…</p>
-                <span class="image main"><img src="images/pic10.jpg" alt="Key Art" /></span>
-                <p>Вы просыпаетесь в беспамятстве. Вы не знаете, кто вы и что вы, но одно известно точно — вы должны добраться до места или предмета, который взывает к вам с момента пробуждения: точка Суперпозиции… Истины… Где начало и конец.</p>
-                <p>На пути вам встретятся непреодолимые трудности. Казалось бы, выхода нет — но при должной силе воли всё возможно.</p>
-
-                <!-- Project Specs -->
-                <h3>Данные проекта</h3>
-                <ul class="alt">
-                    <li><strong>Жанр:</strong> экшен от первого лица.</li>
-                    <li><strong>Платформа:</strong> PC.</li>
-                    <li><strong>Статус:</strong> активная разработка.</li>
-                    <li><strong>Движок:</strong> Unity 6.</li>
-                </ul>
-
-                <!-- Screenshots -->
-                <h2>Скриншоты</h2>
-                <span class="image fit"><img src="images/pic02.jpg" alt="Screenshot 1" loading="lazy" /></span>
-                <div class="box alt">
-                    <div class="row gtr-50 gtr-uniform">
-                        <div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="Screenshot 2" loading="lazy" /></span></div>
-                        <div class="col-4"><span class="image fit"><img src="images/pic09.jpg" alt="Screenshot 3" loading="lazy" /></span></div>
-                        <div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="Screenshot 4" loading="lazy" /></span></div>
-                        <div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="Screenshot 5" loading="lazy" /></span></div>
-                        <div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="Screenshot 6" loading="lazy" /></span></div>
-                        <div class="col-4"><span class="image fit"><img src="images/pic08.jpg" alt="Screenshot 7" loading="lazy" /></span></div>
-                    </div>
-                </div>
-
-                <!-- Developer Log -->
-                <h2>Запись от разработчика</h2>
-                <blockquote>The Project Solus — это первая видеоигра, которую я показал публике...</blockquote>
-
-                <h3>Ближайшие планы</h3>
-                <ol>
-                    <li>Выпустить демо с ранним набором механик.</li>
-                    <li>Доработать сайт.</li>
-                    <li>Создать страницы в социальных сетях.</li>
-                </ol>
-
-                <hr />
-
-                <!-- Links -->
-                <h2>Ссылки</h2>
-                <ul class="actions">
-                    <li><a href="https://www.youtube.com/@SukharevGames" class="button primary icon brands fa-youtube" target="_blank" rel="noopener">YouTube</a></li>
-                    <li><a href="https://vk.ru/sukharevgames" class="button icon brands fa-vk" target="_blank" rel="noopener">VK</a></li>
-                    <li><a href="https://github.com/IvanSukharev" class="button icon brands fa-github" target="_blank" rel="noopener">GitHub</a></li>
-                </ul>
-
-                <hr />
-
-                <!-- Contact -->
-                <h2>Связаться</h2>
-                <div class="box">
-                    <p>Если хотите предложить сотрудничество, стать тестером или просто написать о проекте — напишите на почту <span class="copy-email" data-email="contact@sukharevivan.ru">contact@sukharevivan.ru</span> (клик — чтобы скопировать). Я стараюсь отвечать в течение пары дней.</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <section class="split contact">
-                <section class="alt">
-                    <h3>Соцсети</h3>
-                    <ul class="icons alt">
-                        <li><a href="https://github.com/IvanSukharev" class="icon brands alt fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
-                        <li><a href="https://www.youtube.com/@SukharevGames" class="icon brands alt fa-youtube" target="_blank" rel="noopener"><span class="label">YouTube</span></a></li>
-                        <li><a href="https://vk.ru/sukharevgames" class="icon brands alt fa-vk" target="_blank" rel="noopener"><span class="label">VK</span></a></li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Email</h3>
-                    <p><span class="copy-email" data-email="contact@sukharevivan.ru">contact@sukharevivan.ru</span></p>
-                </section>
-            </section>
-        </footer>
-
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul class="menu">
-                <li>&copy; 2026 Иван Сухарев · The Project Solus</li>
-                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/custom.js"></script>
-
+<body>
+    <p>Redirecting to <a href="en/">English</a> or <a href="ru/">Russian</a> version...</p>
 </body>
 </html>

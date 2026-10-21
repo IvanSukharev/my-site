@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const toast = document.createElement('div');
     toast.className = 'copy-toast';
-    toast.textContent = 'Email copied!'; // Changed to English for consistency
+    toast.textContent = 'Email copied!';
     document.body.appendChild(toast);
 
     const copyEmailElements = document.querySelectorAll('.copy-email');
@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
             iframe.setAttribute('allowfullscreen', '');
             
-            // Apply required styles to iframe
             Object.assign(iframe.style, {
                 position: 'absolute',
                 top: '0',
