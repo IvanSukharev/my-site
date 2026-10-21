@@ -134,8 +134,15 @@ body::before {
     }
 }
 
-/* Language Switcher (i18n)
+/* ==========================================================================
+   Navigation & Language Switcher (i18n)
    ========================================================================== */
+
+/* Force Nav to distribute items (icons left, lang right) */
+#nav {
+    justify-content: space-between;
+}
+
 .lang-switcher {
     display: flex !important;
     align-items: center;
@@ -144,6 +151,7 @@ body::before {
     padding-left: 1rem;
     list-style: none;
     flex-shrink: 0;
+    flex-wrap: nowrap; /* Prevents EN from wrapping or hiding */
     position: relative;
     z-index: 10;
     gap: 0.5rem;
