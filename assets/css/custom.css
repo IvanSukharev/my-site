@@ -135,71 +135,72 @@ body::before {
 }
 
 /* ==========================================================================
-   Navigation & Language Switcher (i18n)
+   Navigation Fix & Language Switcher (i18n)
    ========================================================================== */
 
-/* Force Nav to distribute items (icons left, lang right) */
 #nav {
-    justify-content: space-between;
+    justify-content: space-between !important;
+    overflow: visible !important; 
+}
+
+#nav ul {
+    margin-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 .lang-switcher {
-    display: flex !important;
-    align-items: center;
     margin-left: auto !important;
-    margin-bottom: 0 !important;
-    padding-left: 1rem;
-    list-style: none;
-    flex-shrink: 0;
-    flex-wrap: nowrap; /* Prevents EN from wrapping or hiding */
-    position: relative;
-    z-index: 10;
-    gap: 0.5rem;
+    padding-left: 1rem !important;
+    list-style: none !important;
+    flex-shrink: 0 !important;
+    flex-wrap: nowrap !important; 
+    gap: 0.5rem !important;
 }
 
 .lang-switcher li {
     padding-left: 0 !important; 
-    display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .lang-btn {
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
-    font-weight: 900;
-    font-size: 1.1rem;
-    letter-spacing: 0.075em;
-    text-transform: uppercase;
+    font-family: "Source Sans Pro", Helvetica, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 1.1rem !important;
+    letter-spacing: 0.075em !important;
+    text-transform: uppercase !important;
     color: rgba(255, 255, 255, 0.6) !important;
     border-bottom: none !important;
-    transition: all 0.2s ease-in-out;
-    white-space: nowrap;
+    transition: all 0.2s ease-in-out !important;
+    white-space: nowrap !important;
     
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 4px !important;
+    line-height: 1.2 !important;
 }
 
 .lang-btn:hover {
     color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .lang-btn.active {
     color: #18bfef !important;
-    pointer-events: none;
-    background: rgba(24, 191, 239, 0.1);
+    pointer-events: none !important;
+    background: rgba(24, 191, 239, 0.1) !important;
 }
 
 @media screen and (max-width: 980px) {
     .lang-switcher {
         margin-left: 0.5rem !important;
-        padding-left: 0;
+        padding-left: 0 !important;
     }
     
     .lang-btn {
-        font-size: 1rem;
-        padding: 0.4rem 0.6rem;
+        font-size: 1rem !important;
+        padding: 0.4rem 0.6rem !important;
     }
 }
