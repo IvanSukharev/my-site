@@ -4620,7 +4620,6 @@ input, select, textarea {
 			right: 0;
 			text-align: right;
 			top: 0;
-			vertical-align: middle;
 			width: 7rem;
 		}
 
@@ -4687,13 +4686,3 @@ input, select, textarea {
 		}
 
 	}
-
-#intro .author {
-	font-size: 0.95rem;
-	letter-spacing: 0.075em;
-	text-transform: uppercase;
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-weight: 900;
-	opacity: 0.75;
-	margin-top: -0.5rem;
-}
