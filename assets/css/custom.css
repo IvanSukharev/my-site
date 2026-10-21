@@ -206,7 +206,7 @@ body::before {
 }
 
 /* ==========================================================================
-   Mobile Nav Panel Language Switcher (Targets template's auto-cloned elements)
+   Mobile Nav Panel Language Switcher (Force visible dark color)
    ========================================================================== */
 
 #navPanel .lang-switcher {
@@ -217,29 +217,30 @@ body::before {
     margin: 2rem 0 0 0 !important;
     padding: 1.5rem 0 0 0 !important;
     border-top: solid 2px #eeeeee !important;
-    flex-wrap: wrap !important;
+    width: 100% !important;
     list-style: none !important;
 }
 
 #navPanel .lang-switcher li {
     display: inline-block !important;
-    border-top: 0 !important; 
-    padding: 0 !important; 
+    border: none !important;
+    padding: 0 !important;
     margin: 0 !important;
 }
 
-#navPanel .lang-switcher .lang-btn {
+#navPanel a.lang-btn {
     color: #212931 !important; 
     background: transparent !important;
     border: 2px solid #eeeeee !important;
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1.5rem !important;
     display: inline-block !important;
     font-size: 1rem !important;
     border-radius: 4px !important;
     line-height: 1 !important;
+    text-decoration: none !important;
 }
 
-#navPanel .lang-switcher .lang-btn.active {
+#navPanel a.lang-btn.active {
     color: #ffffff !important;
     background: #18bfef !important;
     border-color: #18bfef !important;
